@@ -1,0 +1,76 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: $z-nav;
+  .navBar {
+    display: flex;
+    align-items: flex-start;
+    background: $color-transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: background-color 0.25s;
+    padding: 0.75rem;
+    &.opaque {
+      background: $color-white;
+      box-shadow: 0 0.125rem 0.25rem $color-black-16;
+    }
+    .button {
+      text-transform: capitalize;
+      .text {
+        margin-left: 0.5rem;
+      }
+      .icon {
+        margin-left: 0.125rem;
+      }
+      &:hover, &:active {
+        background: $color-grey-light;
+      }
+      &:last-of-type {
+        margin-left: auto;
+        .text {
+          margin-left: 0.125rem;
+        }
+        .icon {
+          margin-left: 0.5rem;
+        }
+      }
+      &.crumb {
+        padding-left: 0;
+        margin-left: 0.25rem;
+        &:hover, &:active {
+          .arrow::after {
+            border-right-color: $color-grey-light;
+          }
+        }
+      }
+    }
+    .arrow {
+      position: absolute;
+      left: -0.825rem;
+      &::after, &::before {
+        content: '';
+        transition: border-color 0.2s;
+        position: absolute;
+        left: 0.125rem;
+        top: 50%;
+        transform: translateY(-50%);
+        border-top: 1.2rem solid transparent;
+        border-bottom: 1.2rem solid transparent;
+        border-right: 0.75rem solid $color-white;
+      }
+      &::before {
+        border-right-color: $color-black-32;
+        left: 0;
+      }
+    }
+  }
+}

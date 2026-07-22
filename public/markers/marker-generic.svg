@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27 37">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #3bc3b9;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" y2="0.171" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#14bc83"/>
+      <stop offset="1" stop-color="#3bc3b9"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_937" data-name="Group 937" transform="translate(-232.5 -429.5)">
+    <g id="Symbol_72_11" data-name="Symbol 72 – 11" transform="translate(215)">
+      <path id="Path_521" data-name="Path 521" class="cls-1" d="M11.681,35.281C1.79,20.467,0,18.907,0,13.45A13.257,13.257,0,0,1,13,0,13.257,13.257,0,0,1,26,13.45c0,5.458-1.79,6.92-11.681,21.734a1.518,1.518,0,0,1-2.638.1Z" transform="translate(18 430)"/>
+    </g>
+  </g>
+</svg>

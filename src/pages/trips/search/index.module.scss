@@ -1,0 +1,33 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  .search {
+    display: flex;
+    flex-direction: column;
+    .query {
+      align-self: center;
+      display: flex;
+      align-items: center;
+      .searchIcon {
+        color: $color-grey-dark;
+        margin-right: 0.5rem;
+      }
+      .qInput {
+        border: 1px solid $color-grey;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        padding: 0 0.5rem;
+        max-width: 20rem;
+        width: 100%;
+        &::placeholder {
+          color: $color-grey-dark;
+        }
+      }
+    }
+    .facetList {
+      padding: 0.5rem;
+    }
+  }
+}

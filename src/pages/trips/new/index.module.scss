@@ -1,0 +1,161 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  .buttons {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-bottom: 2rem;
+    padding: 0.125rem;
+    .favorites {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: color 0.5s;
+      .icon {
+        margin: 0 0.5rem;
+      }
+      font-weight: 500;
+      &.faved, &:hover {
+        color: $color-pink;
+      }
+    }
+    .button {
+      margin-right: 0.5rem;
+      border-color: $color-primary-green;
+      color: $color-primary-green;
+      .icon {
+        margin-right: 0.25rem;
+      }
+      &:hover {
+        background: $color-primary-green;
+        color: $color-white;
+      }
+      &.reset {
+        border-color: $color-failure;
+        color: $color-failure;
+        &:hover {
+          background: $color-failure;
+          color: $color-white;
+        }
+      }
+      &.disabled {
+        filter: grayscale(1);
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
+  .content {
+    display: flex;
+    .meta {
+      flex-grow: 1;
+      .header {
+        cursor: default;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+      .inputGroup {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 1.5rem 0;
+        .label {
+          font-size: 0.85rem;
+          color: $color-grey-dark;
+          margin-bottom: 0.25rem;
+          &::first-letter {
+            text-transform: capitalize;
+          }
+        }
+        .input {
+          border: 2px solid $color-grey;
+          padding: 0.75rem 1rem;
+          border-radius: 0.5rem;
+          color: $color-text;
+          background: $color-white;
+          opacity: 1;
+          &.textarea {
+            resize: none;
+            min-height: 6rem;
+            overflow: hidden;
+            white-space: pre-wrap;
+          }
+        }
+        &.checkbox {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .label {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+    .image {
+      width: 50%;
+      min-width: 50%;
+      height: 20rem;
+      margin: 0 3rem 0 0;
+      border-radius: 0.25rem;
+      position: relative;
+      overflow: hidden;
+      .uploadPrompt {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: $color-text;
+        background: $color-white-50;
+        border-radius: 0.25rem;
+        border: 2px dashed $color-text;
+        .icon {
+          margin-right: 0.5rem;
+        }
+      }
+      .fileInput {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        color: $color-transparent;
+        &::file-selector-button, &::-webkit-file-upload-button {
+          display: none;
+        }
+      }
+    }
+    @include sm-md {
+      flex-direction: column;
+      .image {
+        width: 100%;
+        min-width: 100%;
+        height: 22rem;
+        margin: 0 0 1rem 0;
+      }
+    }
+    @include sm {
+      .image {
+        height: 14rem;
+      }
+    }
+  }
+}

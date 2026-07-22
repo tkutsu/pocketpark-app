@@ -1,0 +1,125 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    svg {
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+    width: 100%;
+    color: $color-text;
+    .metaWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      .meta {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: $color-grey-dark;
+        border: 1px solid $color-grey;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        margin: 0.25rem;
+        white-space: pre-wrap;
+        max-width: 25rem;
+        cursor: default;
+        &.closed {
+          color: $color-failure;
+          border-color: $color-failure;
+        }
+        &.link {
+          cursor: pointer;
+          justify-content: center;
+        }
+        .text {
+          margin-left: 0.5rem;
+          white-space: pre-wrap;
+        }
+      }
+    }
+    &.open .metaWrapper {
+      width: 100%;
+    }
+    .descriptionWrapper {
+      color: $color-grey-dark;
+      border: 1px solid $color-grey;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      margin: 0.25rem;
+      &.open {
+        width: 50%;
+        @include sm-md {
+          width: unset;
+        }
+        .arrow {
+          transform: rotate(180deg);
+        }
+      }
+      .descriptionHeader {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        .icon {
+          margin-left: auto;
+        }
+        .text {
+          margin: 0 0.5rem;
+        }
+        .arrow {
+          margin-left: auto;
+          transition: transform 0.25s;
+        }
+      }
+      .description {
+        cursor: default;
+        margin-top: 1rem;
+        display: none;
+        white-space: pre-wrap;
+        &.open {
+          display: block;
+        }
+      }
+    }
+  }
+  .subtitle {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+
+    .text {
+      padding-left: 0.5rem;
+    }
+  }
+  .recordText {
+    margin-top: 1rem;
+    .link {
+      font-weight: 500;
+      margin-right: 0.35rem;
+      color: $color-primary-green;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+}

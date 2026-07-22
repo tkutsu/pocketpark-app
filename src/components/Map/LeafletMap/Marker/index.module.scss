@@ -1,0 +1,63 @@
+@import 'shared/styles/_variables.scss';
+
+.popup {
+  :global(.leaflet-popup-content) {
+    margin: -0.125rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 2px solid $color-grey-light;
+    background: $color-grey-light;
+  }
+  :global(.leaflet-popup-tip) {
+    background: $color-grey-light;
+    z-index: -10;
+  }
+}
+
+.textPopup {
+  :global(.leaflet-popup-content) {
+    padding: 0.75rem 0.25rem;
+    margin: -0.125rem;
+    border-radius: 0.75rem;
+    border: 2px solid $color-grey-light;
+    background: $color-grey-light;
+  }
+  :global(.leaflet-popup-tip) {
+    background: $color-grey-light;
+    z-index: -10;
+  }
+}
+
+.tooltip {
+  color: $color-black-75;
+  max-width: 10rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: $color-white-50 !important;
+  border: none !important;
+  padding: 0 0.125rem !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0.5rem;
+  &.text {
+    top: 1rem;
+    color: $color-primary-green;
+    font-size: 1rem;
+    font-weight: 500;
+    background: $color-white-75 !important;
+  }
+  &.withIcons {
+    top: 1rem;
+    .icons {
+      display: flex;
+      font-size: 0.9rem;
+      color: $color-black-75;
+      >* {
+        margin: 0 0.125rem
+      }
+    }
+  }
+}

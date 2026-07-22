@@ -1,0 +1,33 @@
+@import 'shared/styles/_variables.scss';
+
+.unselectable {
+  pointer-events: none;
+  cursor: grab !important;
+}
+
+.popup {
+  :global(.leaflet-popup-content) {
+    margin: -0.125rem;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 2px solid $color-grey-light;
+    background: $color-grey-light;
+  }
+  :global(.leaflet-popup-tip) {
+    background: $color-grey-light;
+    z-index: -10;
+  }
+}
+
+.tooltip {
+  color: $color-black-50;
+  filter: saturate(50%);
+  max-width: 7.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: $color-white-50  !important;
+  border: none !important;
+  padding: 0.125rem !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}

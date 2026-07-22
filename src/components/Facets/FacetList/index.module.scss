@@ -1,0 +1,81 @@
+@import "shared/styles/_variables.scss";
+
+.container {
+  $openWidth: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  z-index: 2;
+  pointer-events: none;
+  padding: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  .filterIcon {
+    color: $color-grey-dark;
+    margin-right: 0.5rem;
+  }
+  .wrapper {
+    pointer-events: auto;
+    position: relative;
+    margin: 0.25rem;
+    color: $color-text;
+    &.empty {
+      display: none;
+    }
+    .label {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.9rem;
+      border: 1px solid $color-grey;
+      background: $color-grey-v-light;
+      border-radius: 0.5rem;
+      height: 2rem;
+      min-width: 4rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      user-select: none;
+      text-transform: lowercase;
+      &.boolean {
+        padding: 0.25rem 0;
+      }
+      &.selected {
+        font-weight: 500;
+      }
+      &:hover {
+        box-shadow: 0 0.05rem 0.05rem 0 $color-black-16;
+      }
+    }
+    .facet {
+      width: $openWidth;
+      border: 1px solid $color-grey;
+      border-radius: 0.5rem;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      top: 0;
+      left: 0;
+      background: $color-grey-v-light;
+      overflow: hidden;
+      z-index: 10;
+      box-shadow: 0 0.125rem 0.25rem 0 $color-black-16;
+      user-select: none;
+    }
+    &.open {
+      .label {
+        border: none;
+        width: $openWidth;
+        box-shadow: none;
+      }
+      .facet {
+        display: block;
+      }
+    }
+  }
+}

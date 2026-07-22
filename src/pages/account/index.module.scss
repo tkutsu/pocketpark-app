@@ -1,0 +1,134 @@
+@import 'shared/styles/_variables.scss';
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .wrapper {
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .buttonGroup {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 2rem;
+      :first-child {
+        margin-right: 0.5rem;
+      }
+    }
+    .button {
+      color: $color-primary-green;
+      border: 2px solid $color-primary-green;
+      flex-grow: 1;
+      &:hover {
+        color: $color-background;
+        background: $color-primary-green;
+      }
+      &.logout {
+        color: $color-failure;
+        border-color: $color-failure;
+        width: 15.5rem;
+        &:hover {
+          color: $color-background;
+          background: $color-failure;
+        }
+      }
+      &.disabled {
+        filter: grayscale(1);
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+    .section {
+      border: 2px solid $color-grey-light;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      max-width: 21rem;
+    }
+    .description {
+      font-size: 0.85rem;
+      pointer-events: none;
+      margin: 0.5rem 0 1rem 0;
+      color: $color-grey-dark;
+      &.disabled {
+        opacity: 0.5;
+      }
+    }
+    .inputGroup {
+      position: relative;
+      display: flex;
+      align-items: center;
+      max-width: 100%;
+      height: 2.5rem;
+      margin: 0 0 2rem 0;
+      &.disabled {
+        filter: grayscale(1);
+        opacity: 0.5;
+        pointer-events: none;
+      }
+      .text {
+        color: $color-primary-green;
+        font-size: 0.8rem;
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        pointer-events: none;
+      }
+      .input {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        border-bottom: 1px solid $color-primary-green;
+      }
+      .button {
+        margin-left: 0.5rem;
+      }
+      .inputExtra {
+        position: absolute;
+        right: 5rem;
+        width: 6rem;
+        font-size: 0.8rem;
+        text-align: right;
+        top: 50%;
+        transform: translateY(-50%);
+        user-select: none;
+        pointer-events: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $color-grey-dark;
+        @include sm {
+          width: calc(10rem - 1.25rem);
+        }
+      }
+      &.disabled {
+        .text {
+          color: $color-black-50;
+        }
+        .input {
+          pointer-events: none;
+          border-bottom: 1px solid $color-black-50;
+        }
+        .button {
+          pointer-events: none;
+          color: $color-black-50;
+          border-color: $color-black-50;
+        }
+      }
+    }
+    .subtitle {
+      cursor: default;
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      .text {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  cursor: pointer;
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0.125rem 0.125rem 0.25rem $color-black-16;
+  transition: box-shadow 0.25s, transform 0.25s;
+  transform: scale(1);
+  &.noPadding {
+    box-shadow: none;
+    margin: 0;
+  }
+  &:hover {
+    box-shadow: 0.125rem 0.25rem 0.25rem $color-black-16;
+    transform: scale(1.02);
+    .link .image {
+      transform: scale(1.1);
+    }
+  }
+  .link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: $color-grey-light;
+    .fav {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      z-index: 2;
+      font-size: 1.25rem;
+      color: $color-pink;
+    }
+    .image {
+      overflow: hidden;
+      transform: scale(1);
+      transition: transform 5s;
+    }
+    .textWrapper {
+      background: $color-grey-light;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      color: $color-text;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      padding: 0.5rem;
+      height: 25%;
+      .text {
+        margin: 0 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        user-select: none;
+      }
+    }
+  }
+  @include sm {
+    height: 8rem;
+    width: 8rem;
+    font-size: 0.9rem;
+    margin: 0.25rem;
+  }
+  @include md {
+    width: 9rem;
+    height: 9rem;
+  }
+  @include lg-xl {
+    width: 12rem;
+    height: 12rem;
+  }
+}

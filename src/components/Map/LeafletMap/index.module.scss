@@ -1,0 +1,45 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  .map {
+    width: 100%;
+    height: calc(100vh - $overlay-h - 0.75rem);
+    z-index: $z-map;
+  }
+  .bounds {
+    pointer-events: none;
+    cursor: grab;
+  }
+
+  :global(.leaflet-control-container>*) {
+    margin: 4rem 0.125rem $overlay-handle-h 0.125rem;
+    user-select: none;
+  }
+
+  :global(.leaflet-tile-container) {
+    filter: saturate(50%) hue-rotate(-20deg);
+  }
+
+  :global(.leaflet-control-attribution) {
+    opacity: 0.75;
+    margin-right: 4rem;
+    z-index: 0;
+    >*:first-of-type {
+      display: none;
+    }
+  }
+
+  :global(.leaflet-tooltip-pane) {
+    z-index: 400 !important;
+  }
+
+  :global(.leaflet-control-layers) {
+    margin-bottom: -1rem;
+  }
+
+  :global(.leaflet-control-zoom) {
+    @include sm {
+      display: none;
+    }
+  }
+}

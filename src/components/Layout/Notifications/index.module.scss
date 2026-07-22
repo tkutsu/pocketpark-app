@@ -1,0 +1,35 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 3rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  pointer-events: none;
+  z-index: $z-notification;
+  .notification {
+    cursor: pointer;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    background: $color-success;
+    color: $color-white;
+    padding: 0.5rem;
+    box-shadow: 0.125rem 0.125rem $color-black-16;
+    margin-top: 0.5rem;
+    pointer-events: auto;
+    &.warning {
+      background: $color-failure;
+    }
+    .text {
+      margin-right: 0.5rem;
+    }
+    .close {
+      display: flex;
+      margin: 0 0 0 auto;
+    }
+  }
+}

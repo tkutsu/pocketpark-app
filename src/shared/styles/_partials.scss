@@ -1,0 +1,78 @@
+@import 'shared/styles/_variables.scss';
+
+.button {
+  cursor: pointer;
+  pointer-events: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 2.5rem;
+  font-size: 0.85rem;
+  color: $color-text;
+  background: $color-white;
+  border-radius: 0.25rem;
+  white-space: nowrap;
+  transform: scale(1) translateZ(0);
+  transition: background-color 0.2s, transform 0.2s, color 0.2s;
+  border: 2px solid $color-black-32;
+  font-weight: 500;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  &:hover {
+    transform: scale(1.048) translateZ(0);
+  }
+}
+
+.title {
+  cursor: default;
+  font-size: 1.4rem;
+  margin: 0 auto 1.25rem auto;
+  user-select: none;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+  font-weight: 500;
+  color: $color-text;
+  flex-grow: 0;
+  &::first-letter {
+    text-transform: capitalize;
+  }
+}
+
+
+.checkbox {
+  pointer-events: none;
+  input {
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    pointer-events: all;
+    appearance: none;
+    margin: 0; // Not removed via appearance
+    background-color: $color-white; // iOS < 15, remove gradient background
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 2px solid $color-grey;
+    &::before {
+      content: '';
+      display: none;
+      width: 1rem;
+      height: 1rem;
+      background-color: $color-text;
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    }
+    &:checked::before {
+      display: block;
+    }
+    &:disabled {
+      color: $color-white;
+      cursor: default;
+      &::before {
+        opacity: 0.75;
+      }
+    }
+  }
+}

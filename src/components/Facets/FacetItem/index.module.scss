@@ -1,0 +1,31 @@
+@import "shared/styles/_variables.scss";
+
+.listItem {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 1.75rem;
+  .label {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .total {
+    margin-left: auto;
+    color: $color-grey-dark;
+    font-weight: 500;
+    padding-left: 0.25rem;
+  }
+  .clearIcon {
+    margin-left: auto;
+    color: $color-grey-dark;
+  }
+  &.selected {
+    .label {
+      font-weight: 500;
+    }
+  }
+}

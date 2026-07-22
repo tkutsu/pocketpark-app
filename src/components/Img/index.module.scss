@@ -1,0 +1,22 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .image {
+    object-position: center;
+    object-fit: cover;
+  }
+  .placeholder {
+    background: $color-grey-light;
+    color: $color-grey;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Goldplay';
+  //noinspection CssUnknownTarget
+  src: url('/fonts/Goldplay-SemiBold.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Goldplay';
+  //noinspection CssUnknownTarget
+  src: url('/fonts/Goldplay-Medium.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+// Fix fonts that render as bold in Firefox
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Goldplay, "Open Sans", Helvetica, Arial, sans-serif;
+  //noinspection CssUnknownProperty
+  font-display: swap;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+//noinspection ALL
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-block-start: 0;
+  padding-block-end: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+a, a * {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  min-height: stretch;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+// ie snap mode
+@-ms-viewport{ //noinspection CssInvalidPropertyValue
+  width: device-width;
+}
+
+// remove chrome/firefox highlighting
+input, textarea, button, select, svg, a, div, img, [contenteditable="true"] {
+  &, &:focus, &:hover, &:active, *{
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
+  }
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+// iOS zooms in on the left of text inputs for <16px
+textarea,
+input[type='number'], input[type='text'], input[type='tel'],
+input[type='email'],  input[type='name'], input[type='search'] {
+  font-size: 1rem !important;
+}

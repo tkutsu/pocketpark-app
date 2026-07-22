@@ -1,0 +1,44 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  padding-top: 2rem;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  .meta {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+  .comment {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 1rem;
+    .text {
+      cursor: default;
+      border: 2px solid $color-grey;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      color: $color-grey-dark;
+      background: $color-white;
+      opacity: 1;
+      resize: none;
+      min-height: 2rem;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: pre-wrap;
+    }
+    .date {
+      margin-left: auto;
+      color: $color-black-50;
+      font-size: 0.85rem;
+    }
+  }
+  @include sm-md {
+    width: 100%;
+    .comment {
+      margin-left: 0.5rem;
+    }
+  }
+}

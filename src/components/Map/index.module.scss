@@ -1,0 +1,76 @@
+@import 'shared/styles/_variables.scss';
+.map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  justify-items: flex-start;
+  position: absolute;
+  top: calc(100vh - $overlay-h);
+  left: 0;
+  right: 0;
+  background: $color-background;
+  .childrenContainer {
+    max-width: $max-width;
+    min-height: 60vh;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+    overflow: hidden;
+    @include sm {
+      margin: 0 $margin-sm;
+    }
+    @include md {
+      margin: 0 $margin-md;
+    }
+    @include lg {
+      margin: 0 $margin-lg;
+    }
+    @include xl {
+      width: $max-width;
+    }
+  }
+  .overlay {
+    margin-top: -$overlay-handle-h;
+    width: 100%;
+    height: $overlay-handle-h;
+    border-radius: 2.5rem 2.5rem 0 0;
+    background: inherit;
+    box-shadow: 0 -0.25rem 0.25rem $color-black-16;
+    transition: border-radius 0.5s;
+    &.flat {
+      box-shadow: none;
+      border-radius: 0;
+    }
+    .handle {
+      cursor: pointer;
+      position: absolute;
+      top: -$overlay-handle-h;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12rem;
+      max-width: 100%;
+      height: $overlay-handle-h;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 2.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4rem;
+        height: 0.25rem;
+        background: $color-black-16;
+        border-radius: 0.125rem;
+      }
+    }
+    .hint {
+      top: 1.25rem;
+      left: calc(50% + 2.75rem);
+    }
+  }
+}

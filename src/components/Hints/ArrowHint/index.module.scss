@@ -1,0 +1,30 @@
+@import 'shared/styles/_variables.scss';
+
+.container {
+  animation: animArr 3s infinite;
+  position: relative;
+  cursor: pointer;
+  .hand {
+    font-size: 1.75rem;
+    color: $color-primary-green;
+    position: absolute;
+    z-index: $z-hint;
+  }
+  @keyframes animArr {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(1rem);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

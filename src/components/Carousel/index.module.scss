@@ -1,0 +1,35 @@
+@import 'shared/styles/_variables.scss';
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  .button {
+    cursor: pointer;
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: $color-primary-green;
+    background-color: $color-white;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: transform 0.2s;
+    transform: translateY(-50%) scale(1);
+    &.left {
+      justify-content: center;
+      left: -0.5rem;
+      border-radius: 0 50% 50% 0;
+    }
+    &.right {
+      right: -0.5rem;
+      border-radius: 50% 0 0 50%;
+    }
+    &:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+  }
+}

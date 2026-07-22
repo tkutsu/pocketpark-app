@@ -1,0 +1,94 @@
+// COLORS
+$color-transparent: rgba(255, 255, 255, 0.00);
+$color-white: rgba(255, 255, 255, 1.00); // #fff
+$color-white-75: rgba(255, 255, 255, 0.75);
+$color-white-50: rgba(255, 255, 255, 0.50);
+$color-white-25: rgba(255, 255, 255, 0.25);
+$color-grey-v-light: rgba(250, 250, 248, 1.00);
+$color-grey-light: rgba(244, 241, 237, 1.00); // #f4f1ed
+$color-grey: rgba(213, 210, 205, 1.00); // #d5d2cd
+$color-grey-dark: rgba(129, 126, 122, 1.00); // #817e7a
+$color-black: rgba(60, 60, 60, 1.00); // #282828
+$color-black-75: rgba(60, 60, 60, 0.75);
+$color-black-50: rgba(60, 60, 60, 0.50);
+$color-black-32: rgba(60, 60, 60, 0.32);
+$color-black-16: rgba(60, 60, 60, 0.16);
+$color-failure: rgba(220, 050, 070, 1.00); // #dc3246
+$color-success: rgba(000, 160, 100, 1.00); // #00a064
+$color-primary-green: rgba(20, 188, 131, 1.00); //#14bc83
+$color-primary-green-50: rgba(20, 188, 131, 0.50);
+$color-primary-green-05: rgba(20, 188, 131, 0.05);
+$color-primary-blue: rgba(59, 195, 185, 1.00); //#3bbc83
+$color-pink: rgba(255, 116, 140, 1.00); //#FF748C
+$color-text: $color-black;
+$color-background: $color-white;
+
+// Z-INDEX
+$z-map: 0;
+$z-nav: 996;
+$z-notification: 998;
+$z-hint: 999;
+$z-gdpr: 1000;
+
+// BREAKPOINTS
+$sm: 30rem; // 480px
+$md: 60rem; // 960px
+$lg: 80rem; // 1280px
+$sm1px: calc(#{$sm} - 1rem/16);
+$md1px: calc(#{$md} - 1rem/16);
+$lg1px: calc(#{$lg} - 1rem/16);
+
+@mixin sm {
+  @media (max-width: #{$sm1px}) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: #{$sm}) and (max-width: #{$md1px}) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: #{$md}) and (max-width: #{$lg1px}) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: #{$lg}) {
+    @content;
+  }
+}
+@mixin sm-md {
+  @media (max-width: #{$md1px}) {
+    @content;
+  }
+}
+@mixin md-lg {
+  @media (min-width: #{$sm}) and (max-width: #{$lg1px}) {
+    @content;
+  }
+}
+@mixin lg-xl {
+  @media (min-width: #{$md}) {
+    @content;
+  }
+}
+@mixin sm-md-lg {
+  @media (max-width: #{$lg1px}) {
+    @content;
+  }
+}
+@mixin md-lg-xl {
+  @media (min-width: #{$sm}) {
+    @content;
+  }
+}
+
+
+// DIMENSIONS
+$margin-sm: 1.5rem;
+$margin-md: 2rem;
+$margin-lg: 5rem;
+$max-width: calc(#{$lg} - (#{$margin-lg} * 2));
+$overlay-h: 5.25rem;
+$overlay-handle-h: 4rem;
