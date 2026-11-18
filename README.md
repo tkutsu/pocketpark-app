@@ -1,10 +1,13 @@
 # PocketPark App
 
-Frontend of PocketPark, a real-time geospatial platform for park navigation and environmental education. I built it as my MSc thesis (Electronic & Computer Engineering, Technical University of Crete). It's still live at **[pocketpark.themi.dev](https://pocketpark.themi.dev)**.
+The frontend of PocketPark, a map app for finding your way around parks and
+learning about what lives in them. I built it for my MSc thesis in Electronic &
+Computer Engineering at the Technical University of Crete, and it's still
+running at [pocketpark.themi.dev](https://pocketpark.themi.dev).
 
-## Architecture
+## How it fits together
 
-PocketPark runs as three services:
+PocketPark is three services:
 
 ```
 ┌──────────────────────┐   GraphQL    ┌──────────────────────────┐
@@ -19,17 +22,24 @@ PocketPark runs as three services:
 └──────────────────────┘
 ```
 
-This repo is the Next.js + TypeScript frontend: interactive Leaflet maps, park/place/activity browsing, live visitor positions, and observation logging.
+This repo is the Next.js and TypeScript frontend: the Leaflet maps, browsing
+parks, places and activities, watching other visitors move around live, and
+logging what you spot.
 
-The other two services:
+The other two:
 
-- [pocketpark-cms](https://github.com/tkutsu/pocketpark-cms) is a Strapi content service (parks, places, activities, taxa, observations) exposing a GraphQL API.
-- [pocketpark-realtime](https://github.com/tkutsu/pocketpark-realtime) is a Socket.io + Redis pub/sub service that broadcasts live user geolocation.
+- [pocketpark-cms](https://github.com/tkutsu/pocketpark-cms) is the Strapi
+  backend for the content (parks, places, activities, species, observations),
+  served over GraphQL.
+- [pocketpark-realtime](https://github.com/tkutsu/pocketpark-realtime) is a
+  small Socket.io and Redis service that passes visitors' live positions around.
 
 ## Stack
 
-Next.js, React, TypeScript, Leaflet, SWR + graphql-request, Sass modules. Runs on pm2 + nginx on a self-managed VPS.
+Next.js, React, TypeScript, Leaflet, SWR with graphql-request, and Sass modules.
+It runs under pm2 behind nginx on a VPS I look after myself.
 
 ## About this repo
 
-This is a public mirror of the private development repo (2021–2024). Config comes from `.env`; see `src/shared/constants` for the variables it reads.
+It's a public copy of the private repo I worked in from 2021 to 2024. Config
+comes from `.env`, and `src/shared/constants` shows which variables it reads.
